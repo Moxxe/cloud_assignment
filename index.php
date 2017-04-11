@@ -196,11 +196,13 @@ $result = pg_query($pg_conn, "SELECT * FROM menu ");
                       <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg"><?php echo $row[2] ;?></a>
                         <span style="left: 166px; right: 44px;" class="menu-line"></span>
                         <span class="menu-price">Special Menu Item</span>
+                          <br />
                       </span>
                       <br />
                       <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg"><?php echo $row[3] ;?></a>
                         <span style="left: 166px; right: 44px;" class="menu-line"></span>
                         <span class="menu-price">Special Menu Item</span>
+                          <br />
                       </span>
                       <br />
                        <div class="col-md-12  text-center gallery-trigger">
