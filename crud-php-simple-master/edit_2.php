@@ -5,9 +5,9 @@ if(isset($_POST['update']))
 {	
 
 	//$id = $_POST['id']);
-	$name = $_POST['name'];
-	$desc = $_POST['desc'];
-	$price = $_POST['price'];	
+	//$name = $_POST['name'];
+	//$desc = $_POST['desc'];
+	//$price = $_POST['price'];	
 	//echo(name);
 	echo ("no problem here");
 
