@@ -264,11 +264,11 @@ $result = pg_query($pg_conn, "SELECT * FROM menu ");
                         ?>
                     <div class="mix special-1 menu-restaurant" data-myorder="2">
                         <span class="clearfix">
-                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg"><?php echo row[1] ;?></a>
+                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg"><?php echo $row[1] ;?></a>
                         <span style="left: 166px; right: 44px;" class="menu-line"></span>
-                        <span class="menu-price"><?php echo row[3] ;?></span>
+                        <span class="menu-price"><?php echo $row[3] ;?></span>
                       </span>
-                       <span class="menu-subtitle"><?php echo row[2] ;?></span>
+                       <span class="menu-subtitle"><?php echo $row[2] ;?></span>
                     </div>
                     <?php
                      }
