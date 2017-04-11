@@ -14,7 +14,8 @@ function pg_connection_string_from_database_url() {
 # Here we establish the connection. Yes, that's all.
 $pg_conn = pg_connect(pg_connection_string_from_database_url());
 
-if(isset($_POST['Submit'])) {	
+if(isset($_POST['Submit'])) {
+	echo $_POST['id'];
 	$id = mysqli_real_escape_string($mysqli, $_POST['id']);
 	$name = mysqli_real_escape_string($mysqli, $_POST['name']);
 	$desc = mysqli_real_escape_string($mysqli, $_POST['desc']);
