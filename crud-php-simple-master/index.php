@@ -42,7 +42,32 @@ $result = pg_query($pg_conn, "SELECT * FROM menu ");
 		echo "<td>".$row[3]."</td>";	
 		echo "<td><a href=\"edit.php?id=$row[0]\">Edit</a> | <a href=\"delete.php?id=$row[0]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";		
 	}
+
 	?>
 	</table>
+
+	Special Menu 
+	<br />
+	<tr bgcolor='#CCCCCC'>
+		<td>Special Menu ID</td>
+		<td>item Name</td>
+		<td>item description</td>
+		<td>item price</td>
+	</tr>
+	<?php 
+	
+	//while($res = mysql_fetch_array($result)) { // mysql_fetch_array is deprecated, we need to use mysqli_fetch_array 
+	while($row = pg_fetch_row($result)) { 		
+		echo "<tr>";
+		echo "<td>".$row[0]."</td>";
+		echo "<td>".$row[1]."</td>";
+		echo "<td>".$row[2]."</td>";
+		echo "<td>".$row[3]."</td>";	
+		echo "<td><a href=\"edit.php?id=$row[0]\">Edit</a> | <a href=\"delete.php?id=$row[0]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";		
+	}
+
+	?>
+	</table>
+
 </body>
 </html>
