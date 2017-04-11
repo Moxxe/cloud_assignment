@@ -49,7 +49,7 @@
                         <a href="#contact">Contact us</a>
                     </li>
                     <li>
-                        <a href="dbconn.php">Admin Panel</a>
+                        <a href="../admin_panel/index.php">Admin Panel</a>
                     </li>
                 </ul>
             </div>
