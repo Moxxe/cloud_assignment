@@ -13,7 +13,7 @@ if(isset($_POST['update']))
 	$desc = $_POST['desc'];
 	$price = $_POST['price'];	
 	//echo(name);
-	print ("$name");
+	echo ("no problem here");
 
 	
 		//$result = pg_query($pg_conn, "UPDATE menu SET item_name='$name',item_description='$desc',item_price='$price' 
@@ -22,6 +22,8 @@ if(isset($_POST['update']))
 		//redirectig to the display page. In our case, it is index.php
 		//header("Location: index.php");
 	}
+	else
 header("Location: index.php");
+
 }
 ?>
