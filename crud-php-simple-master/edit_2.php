@@ -1,7 +1,8 @@
 <?php
 
 
-	
+if(isset($_POST['update']))
+{	
 
 	//$id = $_POST['id']);
 	$name = $_POST['name'];
@@ -18,7 +19,9 @@
 		//header("Location: index.php");
 	}
 	else
-header("Location: index.php");
-
+{
+	echo "problem is here";
+	header("Location: index.php");
+}
 }
 ?>
