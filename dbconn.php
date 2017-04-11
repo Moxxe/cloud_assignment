@@ -10,4 +10,10 @@ $app->register(new Herrera\Pdo\PdoServiceProvider(),
                )
 );
 
+if(!$app){
+      echo "Error : Unable to open database\n";
+   } else {
+      echo "Opened database successfully\n";
+   }
+
 ?>
