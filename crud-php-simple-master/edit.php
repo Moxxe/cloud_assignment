@@ -54,4 +54,40 @@ while($row = pg_fetch_row($result))
 	</form>
 </body>
 </html>
+<?php
+/
+//$result = pg_query($pg_conn, "SELECT * FROM menu ");
 
+if(isset($_POST['update']))
+{	
+
+	$id = $_POST['id']);
+	$name = $_POST['name'];
+	$desc = $_POST['desc'];
+	$price = $_POST['price'];	
+	
+	/*
+	// checking empty fields
+	if(empty($name) || empty($age) || empty($email)) {	
+			
+		if(empty($name)) {
+			echo "<font color='red'>Name field is empty.</font><br/>";
+		}
+		
+		if(empty($age)) {
+			echo "<font color='red'>Age field is empty.</font><br/>";
+		}
+		
+		if(empty($email)) {
+			echo "<font color='red'>Email field is empty.</font><br/>";
+		}		
+	} else {*/	
+		//updating the table
+		$result = pg_query($pg_conn, "UPDATE menu SET item_id='$id',item_name='$name',item_description='$desc',item_price='$price' 
+		 WHERE item_id=$id");
+		
+		//redirectig to the display page. In our case, it is index.php
+		header("Location: index.php");
+	}
+}
+?>
