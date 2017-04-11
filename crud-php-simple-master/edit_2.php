@@ -3,9 +3,6 @@ if(isset($_POST['update']))
 {	
 
 	//$id = $_POST['id']);
-	$name = $_POST['item1'];
-	$desc = $_POST['item2'];
-	$desc = $_POST['item3'];
 	$price = $_POST['price'];	
 	//echo(name);
 	
@@ -13,8 +10,8 @@ if(isset($_POST['update']))
 	
 $pg_conn = pg_connect(pg_connection_string_from_database_url());
 
-		$result = pg_query($pg_conn,"UPDATE special SET item1='$item1',item2='$item2',item3='$item3',item_price='$price' 
-		 WHERE item_id=$id");
+		$result = pg_query($pg_conn,"UPDATE special SET item_price='$price' 
+		 WHERE id=$id");
 		
 		//redirectig to the display page. In our case, it is index.php
 		header("Location: index.php");
@@ -38,7 +35,7 @@ function pg_connection_string_from_database_url() {
 # Here we establish the connection. Yes, that's all.
 $pg_conn = pg_connect(pg_connection_string_from_database_url());
 //selecting data associated with this particular id
-$result = $result = pg_query($pg_conn, "SELECT * FROM speical WHERE id=$id");
+$result = $result = pg_query($pg_conn, "SELECT * FROM special WHERE id=$id");
 
 while($row = pg_fetch_row($result))
 {
