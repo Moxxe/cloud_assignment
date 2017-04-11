@@ -48,6 +48,9 @@
                     <li>
                         <a href="#contact">Contact us</a>
                     </li>
+                    <li>
+                        <a href="dbconn.php">Admin Panel</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

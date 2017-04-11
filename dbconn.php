@@ -2,7 +2,7 @@
    $host        = "host=127.0.0.1";
    $port        = "port=5432";
    $dbname      = "dbname=postgresql-curly-12391";
-   $credentials = "user= password=";
+   $credentials = "";
 
    $db = pg_connect( "$host $port $dbname $credentials"  );
    if(!$db){
