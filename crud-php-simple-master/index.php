@@ -1,6 +1,13 @@
 <?php
 //including the database connection file
-include_once("config.php");
+function pg_connection_string_from_database_url() {
+  extract(parse_url($_ENV["DATABASE_URL"])); 
+  return "user=$user password=$pass host=$host dbname=" . substr($path, 1); # <- you may want to add sslmode=require there too
+}
+
+# Here we establish the connection. Yes, that's all.
+$pg_conn = pg_connect(pg_connection_string_from_database_url());
+$result = pg_query($pg_conn, "SELECT * FROM menu ");
 
 //fetching data in descending order (lastest entry first)
 //$result = mysql_query("SELECT * FROM users ORDER BY id DESC"); // mysql_query is deprecated
@@ -25,14 +32,14 @@ include_once("config.php");
 		<td>item price</td>
 	</tr>
 	<?php 
-	$result = pg_query($mysqli, "SELECT * FROM menu"); 
+	
 	//while($res = mysql_fetch_array($result)) { // mysql_fetch_array is deprecated, we need to use mysqli_fetch_array 
-	while($res = pg_fetch_row($result)) { 		
+	while($row = pg_fetch_row($result)) { 		
 		echo "<tr>";
-		echo "<td>".$res['item_id']."</td>";
-		echo "<td>".$res['item_name']."</td>";
-		echo "<td>".$res['item_description']."</td>";
-		echo "<td>".$res['item_price']."</td>";	
+		echo "<td>".$row[0]."</td>";
+		echo "<td>".$row[1]."</td>";
+		echo "<td>".$row[2]."</td>";
+		echo "<td>".$row[3]."</td>";	
 		echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a> | <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";		
 	}
 	?>
