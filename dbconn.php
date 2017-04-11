@@ -1,38 +1,22 @@
 <?php
+# This function reads your DATABASE_URL config var and returns a connection
+# string suitable for pg_connect. Put this in your app.
+function pg_connection_string_from_database_url() {
+  extract(parse_url($_ENV["DATABASE_URL"]));
+  return "user=$user password=$pass host=$host dbname=" . substr($path, 1); # <- you may want to add sslmode=require there too
+}
 
+# Here we establish the connection. Yes, that's all.
+$pg_conn = pg_connect(pg_connection_string_from_database_url());
 
-$dbopts = parse_url(getenv('DATABASE_URL'));
-$app->register(new Herrera\Pdo\PdoServiceProvider(),
-               array(
-                   'pdo.dsn' => 'pgsql:dbname='.ltrim($dbopts["path"],'/').';host='.$dbopts["host"] . ';port=' . $dbopts["port"],
-                   'pdo.username' => $dbopts["user"],
-                   'pdo.password' => $dbopts["pass"]
-               )
-);
-$host        = $dbopts["host"];
-   $port        = $dbopts["port"];
-   $dbname      = $dbopts["path"];
-   $credentials = $dbopts["user"] $dbopts["pass"];
-
-   $db = pg_connect( "$host $port $dbname $credentials"  );
-   if(!$db){
-      echo "Error : Unable to open database\n";
-   } else {
-      echo "Opened database successfully\n";
-   }
-
-   $sql =<<<EOF
-      INSERT INTO menu (item_id,item_name,item_description,item_price)
-      VALUES (4, 'manchurian','okay & okay', 100 );
-
-      
-EOF;
-
-   $ret = pg_query($db, $sql);
-   if(!$ret){
-      echo pg_last_error($db);
-   } else {
-      echo "Records created successfully\n";
-   }
-   pg_close($db);
+# Now let's use the connection for something silly just to prove it works:
+$result = pg_query($pg_conn, "SELECT item_name FROM menu ");
+print "<pre>\n";
+if (!pg_num_rows($result)) {
+  print("Your connection is working, but your database is empty.\nFret not. This is expected for new apps.\n");
+} else {
+  print "Tables in your database:\n";
+  while ($row = pg_fetch_row($result)) { print("- $row[0]\n"); }
+}
+print "\n";
 ?>
