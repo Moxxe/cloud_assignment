@@ -44,21 +44,7 @@ if(isset($_POST['update']))
 	}
 }
 ?>
-<?php
-//getting id from url
-$id = $_GET['id'];
 
-//selecting data associated with this particular id
-$result = $result = pg_query($pg_conn, "SELECT * FROM menu WHERE item_id=$id");
-
-while($res = pg_fetch_row($result))
-{
-	$id = $res[0];
-	$name = $res[1];
-	$desc = $res[2];
-	$price = $res[3];
-}
-?>
 <html>
 <head>	
 	<title>Edit Data</title>
