@@ -8,7 +8,7 @@ if(isset($_POST['update']))
 	$price = $_POST['price'];	
 
 	
-		$pg_conn = pg_connect(pg_connection_string_from_database_url());
+		//$pg_conn = pg_connect(pg_connection_string_from_database_url());
 
 		$result = pg_query($pg_conn,"UPDATE menu SET  item_price='$price'
 		 WHERE item_id=$id");
