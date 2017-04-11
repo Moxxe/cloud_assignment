@@ -21,7 +21,7 @@ if(isset($_POST['update']))
 	else
 {
 	echo "problem is here";
-	header("Location: index.php");
+	//header("Location: index.php");
 }
-}
+
 ?>
