@@ -26,7 +26,7 @@ $result = pg_query($mysqli, "SELECT * FROM menu");
 	</tr>
 	<?php 
 	//while($res = mysql_fetch_array($result)) { // mysql_fetch_array is deprecated, we need to use mysqli_fetch_array 
-	while($res = mysqli_fetch_array($result)) { 		
+	while($res = pg_fetch_row($result)) { 		
 		echo "<tr>";
 		echo "<td>".$res['item_id']."</td>";
 		echo "<td>".$res['item_name']."</td>";
