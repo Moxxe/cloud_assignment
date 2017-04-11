@@ -24,11 +24,11 @@ if(isset($_POST['Submit'])) {
 		// if all the fields are filled (not empty) 
 			
 		//insert data to database	
-		$result = pg_query($pg_conn, "INSERT INTO menu (item_id,item_name,item_description,item_price) VALUES('$id','$name','$desc','$price')");
+		$result = pg_query($pg_conn, "INSERT INTO menu (item_id,item_name,item_description,item_price) VALUES('5','burger','dghjfk','56')");
 		
 		//display success message
 		echo "<font color='green'>Data added successfully.";
-		echo "$name";
+		echo $name;
 		echo "<br/><a href='index.php'>View Result</a>";
 	
 }
