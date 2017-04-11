@@ -50,12 +50,14 @@ $result = pg_query($pg_conn, "SELECT * FROM menu ");
 	<br />
 	<tr bgcolor='#CCCCCC'>
 		<td>Special Menu ID</td>
-		<td>item Name</td>
-		<td>item description</td>
-		<td>item price</td>
+		<td>item 1</td>
+		<td>item item 2</td>
+		<td>item 3</td>
 	</tr>
 	<?php 
 	
+	$result = pg_query($pg_conn, "SELECT * FROM special_menu ");
+	$row = pg_fetch_row($result);
 	//while($res = mysql_fetch_array($result)) { // mysql_fetch_array is deprecated, we need to use mysqli_fetch_array 
 	while($row = pg_fetch_row($result)) { 		
 		echo "<tr>";

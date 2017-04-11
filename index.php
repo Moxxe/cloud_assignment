@@ -225,13 +225,26 @@
             </div>
         </div>
     </section>
+    <?php
+function pg_connection_string_from_database_url() {
+  extract(parse_url($_ENV["DATABASE_URL"])); 
+  return "user=$user password=$pass host=$host dbname=" . substr($path, 1); # <- you may want to add sslmode=require there too
+}
+
+# Here we establish the connection. Yes, that's all.
+$pg_conn = pg_connect(pg_connection_string_from_database_url());
+
+# Now let's use the connection for something silly just to prove it works:
+$result = pg_query($pg_conn, "SELECT * FROM menu ");
+$row=
+?>
     <!--/ menu -->
-    <!-- Special Menu -->
+    <!--  Menu -->
     <section id="menu-list" class="section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center marb-35">
-                    <h1 class="header-h">Special Menu List</h1>
+                    <h1 class="header-h">Menu List</h1>
                     <p class="header-p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
                     <br>nibh euismod tincidunt ut laoreet dolore magna aliquam. </p>
                 </div>
@@ -245,70 +258,18 @@
                     -->
                     </ul>
                 </div>
-                <div id="Container">
-                        <span class="clearfix">
-                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-                        <span style="left: 166px; right: 44px;" class="menu-line"></span>
-                        <span class="menu-price">$20.99</span>
-                      </span>
-                      <span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-                    </div>
+                    while($row = pg_fetch_row($result))
+                    {
                     <div class="mix special-1 menu-restaurant" data-myorder="2">
                         <span class="clearfix">
-                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
+                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg"><?php echo row[1] ;?></a>
                         <span style="left: 166px; right: 44px;" class="menu-line"></span>
-                        <span class="menu-price">$20.99</span>
+                        <span class="menu-price"><?php echo row[3] ;?></span>
                       </span>
-                      <span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
+                       <span class="menu-subtitle"><?php echo row[2] ;?></span>
                     </div>
-                    <div class="mix special-1 menu-restaurant" data-myorder="2">
-                        <span class="clearfix">
-                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-                        <span style="left: 166px; right: 44px;" class="menu-line"></span>
-                        <span class="menu-price">$20.99</span>
-                      </span>
-                      <span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-                    </div>
-                    <div class="mix special-1 menu-restaurant" data-myorder="2">
-                        <span class="clearfix">
-                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-                        <span style="left: 166px; right: 44px;" class="menu-line"></span>
-                        <span class="menu-price">$20.99</span>
-                      </span>
-                      <span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-                    </div>
-                    <div class="mix special-2 menu-restaurant" data-myorder="2">
-                        <span class="clearfix">
-                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-                        <span style="left: 166px; right: 44px;" class="menu-line"></span>
-                        <span class="menu-price">$20.99</span>
-                      </span>
-                      <span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-                    </div>
-                    <div class="mix special-2 menu-restaurant" data-myorder="2">
-                        <span class="clearfix">
-                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-                        <span style="left: 166px; right: 44px;" class="menu-line"></span>
-                        <span class="menu-price">$20.99</span>
-                      </span>
-                      <span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-                    </div>
-                    <div class="mix special-2 menu-restaurant" data-myorder="2">
-                        <span class="clearfix">
-                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-                        <span style="left: 166px; right: 44px;" class="menu-line"></span>
-                        <span class="menu-price">$20.99</span>
-                      </span>
-                      <span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-                    </div>
-                    <div class="mix special-2 menu-restaurant" data-myorder="2">
-                        <span class="clearfix">
-                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-                        <span style="left: 166px; right: 44px;" class="menu-line"></span>
-                        <span class="menu-price">$20.99</span>
-                      </span>
-                      <span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-                    </div>
+                }
+                
                     
                 </div>
             </div>
