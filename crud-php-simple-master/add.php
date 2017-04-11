@@ -28,7 +28,7 @@ if(isset($_POST['Submit'])) {
 		
 		//display success message
 		echo "<font color='green'>Data added successfully.";
-		echo ($name);
+		echo ('$name');
 		echo "<br/><a href='index.php'>View Result</a>";
 	
 }
