@@ -236,7 +236,7 @@ $pg_conn = pg_connect(pg_connection_string_from_database_url());
 
 # Now let's use the connection for something silly just to prove it works:
 $result = pg_query($pg_conn, "SELECT * FROM menu ");
-$row=
+
 ?>
     <!--/ menu -->
     <!--  Menu -->
@@ -258,8 +258,10 @@ $row=
                     -->
                     </ul>
                 </div>
+                    <?php 
                     while($row = pg_fetch_row($result))
                     {
+                        ?>
                     <div class="mix special-1 menu-restaurant" data-myorder="2">
                         <span class="clearfix">
                         <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg"><?php echo row[1] ;?></a>
@@ -268,8 +270,9 @@ $row=
                       </span>
                        <span class="menu-subtitle"><?php echo row[2] ;?></span>
                     </div>
-                }
-                
+                    <?php
+                     }
+                ?>
                     
                 </div>
             </div>
