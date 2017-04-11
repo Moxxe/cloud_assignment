@@ -10,17 +10,13 @@ if(isset($_POST['update']))
 	
 
 	
-		//$result = pg_query($pg_conn, "UPDATE menu SET item_name='$name',item_description='$desc',item_price='$price' 
-		 //WHERE item_id=$id");
+		$result = pg_query($pg_conn, "UPDATE menu SET item_name='$name',item_description='$desc',item_price='$price' 
+		 WHERE item_id=$id");
 		
 		//redirectig to the display page. In our case, it is index.php
 		header("Location: index.php");
 	}
-	else
-{
-	echo "problem is here";
-	header("Location: index.php");
-}
+	
 
 //header("Location: index.php");
 
