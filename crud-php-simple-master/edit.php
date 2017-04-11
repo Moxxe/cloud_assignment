@@ -14,7 +14,7 @@ if(isset($_POST['update']))
 		 //WHERE item_id=$id");
 		
 		//redirectig to the display page. In our case, it is index.php
-		//header("Location: index.php");
+		header("Location: index.php");
 	}
 	else
 {
@@ -22,7 +22,7 @@ if(isset($_POST['update']))
 	//header("Location: index.php");
 }
 
-header("Location: index.php");
+//header("Location: index.php");
 
 
 ?>
