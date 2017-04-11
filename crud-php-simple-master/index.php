@@ -32,16 +32,16 @@ $result = pg_query($pg_conn, "SELECT * FROM menu ");
 		<td>item price</td>
 	</tr>
 	<?php 
-	
+	while ($row = pg_fetch_row($result)) { print("- $row[0]\n"); }
 	//while($res = mysql_fetch_array($result)) { // mysql_fetch_array is deprecated, we need to use mysqli_fetch_array 
-	while($row = pg_fetch_row($result)) { 		
+	/*while($row = pg_fetch_row($result)) { 		
 		echo "<tr>";
 		echo "<td>".$row[0]."</td>";
 		echo "<td>".$row[1]."</td>";
 		echo "<td>".$row[2]."</td>";
 		echo "<td>".$row[3]."</td>";	
 		echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a> | <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";		
-	}
+	}*/
 	?>
 	</table>
 </body>
