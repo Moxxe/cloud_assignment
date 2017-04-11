@@ -43,7 +43,7 @@ while($row = pg_fetch_row($result))
 	$item1 = $row[1];
 	$item2 = $row[2];
 	$item3 = $row[3];
-	$price = $row[3];
+	$price = $row[4];
 
 
 }
@@ -64,20 +64,20 @@ while($row = pg_fetch_row($result))
 				<td><input type="text"disabled="disabled" name="id" value="<?php echo $id;?>"></td>
 			</tr>
 			<tr> 
-				<td>name</td>
+				<td>item1</td>
 				<td><input type="text"disabled="disabled" name="item1" value="<?php echo $item1;?>"></td>
 			</tr>
 			<tr> 
-				<td>description</td>
+				<td>item2</td>
 				<td><input type="text" disabled="disabled"name="item2" value="<?php echo $item2;?>"></td>
 			</tr>
 			<tr> 
-				<td>price</td>
+				<td>item3</td>
 				<td><input type="text"disabled="disabled" name="item3" value="<?php echo $item3;?>"></td>
 			</tr>
 			<tr> 
 				<td>price</td>
-				<td><input type="text" name="item4" value="<?php echo $price;?>"></td>
+				<td><input type="text" name="price" value="<?php echo $price;?>"></td>
 			</tr>
 			<tr>
 				<td><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td>
