@@ -40,7 +40,7 @@ $result = pg_query($pg_conn, "SELECT * FROM menu ");
 		echo "<td>".$row[1]."</td>";
 		echo "<td>".$row[2]."</td>";
 		echo "<td>".$row[3]."</td>";	
-		echo "<td><a href=\"edit.php?id=$row[0]\">Edit</a> | <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";		
+		echo "<td><a href=\"edit.php?id=1\">Edit</a> | <a href=\"delete.php?id=$row[0]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";		
 	}
 	?>
 	</table>
