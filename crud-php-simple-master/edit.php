@@ -36,7 +36,7 @@ if(isset($_POST['update']))
 		}		
 	} else {*/	
 		//updating the table
-		$result = pg_query($mysqli, "UPDATE menu SET item_id='$id',item_name='$name',item_description='$desc',item_price='$price' 
+		$result = pg_query($pg_conn, "UPDATE menu SET item_id='$id',item_name='$name',item_description='$desc',item_price='$price' 
 		 WHERE item_id=$id");
 		
 		//redirectig to the display page. In our case, it is index.php
@@ -51,7 +51,7 @@ $id = $_GET['id'];
 //selecting data associated with this particular id
 $result = $result = pg_query($pg_conn, "SELECT * FROM menu WHERE item_id=$id");
 
-while($res = mysqli_fetch_array($result))
+while($res = pg_fetch_row($result))
 {
 	$id = $res[0];
 	$name = $res[1];
