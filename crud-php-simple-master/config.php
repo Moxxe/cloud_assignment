@@ -1,19 +1,4 @@
 <?php
-/*
-// mysql_connect("database-host", "username", "password")
-$conn = mysql_connect("localhost","root","root") 
-			or die("cannot connected");
-
-// mysql_select_db("database-name", "connection-link-identifier")
-@mysql_select_db("test",$conn);
-*/
-
-/**
- * mysql_connect is deprecated
- * using mysqli_connect instead
- */
-
-<?php
 # This function reads your DATABASE_URL config var and returns a connection
 # string suitable for pg_connect. Put this in your app.
 function pg_connection_string_from_database_url() {
