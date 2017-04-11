@@ -27,6 +27,6 @@ if(isset($_POST['update']))
 		//redirectig to the display page. In our case, it is index.php
 		header("Location: index.php");
 	}
-
+header("Location: index.php");
 }
 ?>
