@@ -49,7 +49,7 @@
                         <a href="#contact">Contact us</a>
                     </li>
                     <li>
-                        <a href="../admin_panel/index.php">Admin Panel</a>
+                        <a href="../crud-php-simple-master/index.php">Admin Panel</a>
                     </li>
                 </ul>
             </div>
