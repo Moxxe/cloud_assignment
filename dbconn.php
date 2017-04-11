@@ -1,8 +1,34 @@
 <?php
-   $host        = "host=127.0.0.1";
+$url = parse_url(getenv("DATABASE_URL"));
+
+$host = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$database = substr($url["path"], 1);
+
+//Then change your pgsql entry in that same file to be the following:
+
+'pgsql' => array(
+    'driver'   => 'pgsql',
+    'host'     => $host,
+    'database' => $database,
+    'username' => $username,
+    'password' => $password,
+    'charset'  => 'utf8',
+    'prefix'   => '',
+    'schema'   => 'public',
+),
+
+
+
+
+
+
+
+   
    $port        = "port=5432";
-   $dbname      = "dbname=postgresql-curly-12391";
-   $credentials = "";
+  
+   $credentials = "user= $username password=$password";
 
    $db = pg_connect( "$host $port $dbname $credentials"  );
    if(!$db){
