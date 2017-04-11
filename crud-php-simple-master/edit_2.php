@@ -1,27 +1,94 @@
 <?php
-
-
 if(isset($_POST['update']))
 {	
 
 	//$id = $_POST['id']);
-	//$name = $_POST['name'];
-	//$desc = $_POST['desc'];
-	//$price = $_POST['price'];	
+	$name = $_POST['item1'];
+	$desc = $_POST['item2'];
+	$desc = $_POST['item3'];
+	$price = $_POST['price'];	
 	//echo(name);
-	echo ("no problem here");
+	
 
 	
-		//$result = pg_query($pg_conn, "UPDATE menu SET item_name='$name',item_description='$desc',item_price='$price' 
-		 //WHERE item_id=$id");
+$pg_conn = pg_connect(pg_connection_string_from_database_url());
+
+		$result = pg_query($pg_conn,"UPDATE special SET item1='$item1',item2='$item2',item3='$item3',item_price='$price' 
+		 WHERE item_id=$id");
 		
 		//redirectig to the display page. In our case, it is index.php
-		//header("Location: index.php");
+		header("Location: index.php");
 	}
-	else
-{
-	echo "problem is here";
-	//header("Location: index.php");
-}
+	
+
+//header("Location: index.php");
+
 
 ?>
+
+
+<?php
+//getting id from url
+$id = $_GET['id'];
+function pg_connection_string_from_database_url() {
+  extract(parse_url($_ENV["DATABASE_URL"])); 
+  return "user=$user password=$pass host=$host dbname=" . substr($path, 1); # <- you may want to add sslmode=require there too
+}
+
+# Here we establish the connection. Yes, that's all.
+$pg_conn = pg_connect(pg_connection_string_from_database_url());
+//selecting data associated with this particular id
+$result = $result = pg_query($pg_conn, "SELECT * FROM speical WHERE id=$id");
+
+while($row = pg_fetch_row($result))
+{
+	$id = $row[0];
+	$item1 = $row[1];
+	$item2 = $row[2];
+	$item3 = $row[3];
+	$price = $row[3];
+
+
+}
+?>
+<html>
+<head>	
+	<title>Edit Data</title>
+</head>
+
+<body>
+	<a href="index.php">Home</a>
+	<br/><br/>
+	
+	<form name="form1" method="post" action="edit.php">
+		<table border="0">
+			<tr> 
+				<td>ID</td>
+				<td><input type="text"disabled="disabled" name="id" value="<?php echo $id;?>"></td>
+			</tr>
+			<tr> 
+				<td>name</td>
+				<td><input type="text"disabled="disabled" name="item1" value="<?php echo $item1;?>"></td>
+			</tr>
+			<tr> 
+				<td>description</td>
+				<td><input type="text" disabled="disabled"name="item2" value="<?php echo $item2;?>"></td>
+			</tr>
+			<tr> 
+				<td>price</td>
+				<td><input type="text"disabled="disabled" name="item3" value="<?php echo $item3;?>"></td>
+			</tr>
+			<tr> 
+				<td>price</td>
+				<td><input type="text" name="item4" value="<?php echo $price;?>"></td>
+			</tr>
+			<tr>
+				<td><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td>
+				<td><input type="submit" name="update" value="Update"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
+
+

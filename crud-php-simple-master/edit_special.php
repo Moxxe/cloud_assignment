@@ -41,7 +41,7 @@ $result = pg_query($pg_conn, "SELECT * FROM special where id=1 ");
 		echo "<td>".$row[2]."</td>";
 		echo "<td>".$row[3]."</td>";
 		echo "<td>".$row[4]."</td>";	
-		echo "<td><a href=\"edit.php?id=$row[0]\">Edit</a></td>";		
+		echo "<td><a href=\"edit_2.php?id=$row[0]\">Edit</a></td>";		
 	}
 
 	?>
