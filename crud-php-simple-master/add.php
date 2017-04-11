@@ -15,7 +15,7 @@ function pg_connection_string_from_database_url() {
 $pg_conn = pg_connect(pg_connection_string_from_database_url());
 
 if(isset($_POST['Submit'])) {
-	//echo $_POST['id'];
+	echo $_POST['id'];
 	$id =  $_POST['id'];
 	$name = $_POST['name'];
 	$desc = , $_POST['desc'];
@@ -25,11 +25,10 @@ if(isset($_POST['Submit'])) {
 		// if all the fields are filled (not empty) 
 			
 		//insert data to database	
-		$result = pg_query($pg_conn, "INSERT INTO menu (item_id,item_name,item_description,item_price) VALUES ('7','burger','dghjfk','56')");
+		//$result = pg_query($pg_conn, "INSERT INTO menu (item_id,item_name,item_description,item_price) VALUES ('7','burger','dghjfk','56')");
 		
 		//display success message
 		echo "<font color='green'>Data added successfully.";
-		
 		echo "<br/><a href='index.php'>View Result</a>";
 	
 }
