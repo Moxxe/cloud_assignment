@@ -107,124 +107,7 @@
     <!--/about-->
     <!-- event -->
     
-    <!-- menu -->
-    <section id="special-menu-list" class="section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center marb-35">
-                    <h1 class="header-h">Special Offers</h1>
-                    <p class="header-p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-                    <br>nibh euismod tincidunt ut laoreet dolore magna aliquam. </p>
-                </div>
-                <div class="col-md-12  text-center gallery-trigger">
-                    <ul>
-                        
-                        <li><a class="filter" data-filter=".category-1">Package 1</a></li>
-                        <li><a class="filter" data-filter=".category-2">Package 2</a></li>
-                        <li><a class="filter" data-filter=".category-3">Package3</a></li>
-                    </ul>
-                </div>
-                <div id="Container">
-                    <div class="mix category-1 menu-restaurant" data-myorder="2">
-                        <span class="clearfix">
-                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-                        <span style="left: 166px; right: 44px;" class="menu-line"></span>
-                        <span class="menu-price">$20.99</span>
-                      </span>
-                      <span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-                    </div>
-                    <div class="mix category-1 menu-restaurant" data-myorder="2">
-                        <span class="clearfix">
-                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-                        <span style="left: 166px; right: 44px;" class="menu-line"></span>
-                        <span class="menu-price">$20.99</span>
-                      </span>
-                      <span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-                    </div>
-                    <div class="mix category-1 menu-restaurant" data-myorder="2">
-                        <span class="clearfix">
-                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-                        <span style="left: 166px; right: 44px;" class="menu-line"></span>
-                        <span class="menu-price">$20.99</span>
-                      </span>
-                      <span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-                    </div>
-                    <div class="mix category-1 menu-restaurant" data-myorder="2">
-                        <span class="clearfix">
-                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-                        <span style="left: 166px; right: 44px;" class="menu-line"></span>
-                        <span class="menu-price">$20.99</span>
-                      </span>
-                      <span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-                    </div>
-                    <div class="mix category-2 menu-restaurant" data-myorder="2">
-                        <span class="clearfix">
-                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-                        <span style="left: 166px; right: 44px;" class="menu-line"></span>
-                        <span class="menu-price">$20.99</span>
-                      </span>
-                      <span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-                    </div>
-                    <div class="mix category-2 menu-restaurant" data-myorder="2">
-                        <span class="clearfix">
-                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-                        <span style="left: 166px; right: 44px;" class="menu-line"></span>
-                        <span class="menu-price">$20.99</span>
-                      </span>
-                      <span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-                    </div>
-                    <div class="mix category-2 menu-restaurant" data-myorder="2">
-                        <span class="clearfix">
-                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-                        <span style="left: 166px; right: 44px;" class="menu-line"></span>
-                        <span class="menu-price">$20.99</span>
-                      </span>
-                      <span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-                    </div>
-                    <div class="mix category-2 menu-restaurant" data-myorder="2">
-                        <span class="clearfix">
-                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-                        <span style="left: 166px; right: 44px;" class="menu-line"></span>
-                        <span class="menu-price">$20.99</span>
-                      </span>
-                      <span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-                    </div>
-                    <div class="mix category-3 menu-restaurant" data-myorder="2">
-                        <span class="clearfix">
-                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-                        <span style="left: 166px; right: 44px;" class="menu-line"></span>
-                        <span class="menu-price">$20.99</span>
-                      </span>
-                      <span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-                    </div>
-                    <div class="mix category-3 menu-restaurant" data-myorder="2">
-                        <span class="clearfix">
-                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-                        <span style="left: 166px; right: 44px;" class="menu-line"></span>
-                        <span class="menu-price">$20.99</span>
-                      </span>
-                      <span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-                    </div>
-                    <div class="mix category-3 menu-restaurant" data-myorder="2">
-                        <span class="clearfix">
-                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-                        <span style="left: 166px; right: 44px;" class="menu-line"></span>
-                        <span class="menu-price">$20.99</span>
-                      </span>
-                      <span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-                    </div>
-                    <div class="mix category-3 menu-restaurant" data-myorder="2">
-                        <span class="clearfix">
-                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Food Item Name</a>
-                        <span style="left: 166px; right: 44px;" class="menu-line"></span>
-                        <span class="menu-price">$20.99</span>
-                      </span>
-                      <span class="menu-subtitle">Neque porro quisquam est qui dolorem</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    
     <?php
 function pg_connection_string_from_database_url() {
   extract(parse_url($_ENV["DATABASE_URL"])); 
@@ -279,6 +162,60 @@ $result = pg_query($pg_conn, "SELECT * FROM menu ");
         </div>
     </section>
     <!-- /special menu!-->
+    <section id="special-menu-list" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center marb-35">
+                    <h1 class="header-h">Special Menu </h1>
+                    <p class="header-p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+                    <br>nibh euismod tincidunt ut laoreet dolore magna aliquam. </p>
+                </div>
+                <div class="col-md-12  text-center gallery-trigger">
+                    <ul>
+                        
+                        <li><a class="filter" data-filter=".special-1">Menu</a></li>
+                        <!--
+                        <li><a class="filter" data-filter=".special-2">Special Package 2</a></li>
+                        <li><a class="filter" data-filter=".special-3">Special Package 3</a></li>
+                    -->
+                    </ul>
+                </div>
+
+                    <?php 
+                    $result = pg_query($pg_conn, "SELECT * FROM special where id=1 ");
+                    while($row = pg_fetch_row($result))
+                    {
+                        ?>
+                    <div class="mix special-1 menu-restaurant" data-myorder="2">
+                        <span class="clearfix">
+                        <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg"><?php echo $row[1] ;?></a>
+                        <span style="left: 166px; right: 44px;" class="menu-line"></span>
+                        <span class="menu-price">Special Menu Item</span>
+                      </span>
+                      <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg"><?php echo $row[2] ;?></a>
+                        <span style="left: 166px; right: 44px;" class="menu-line"></span>
+                        <span class="menu-price">Special Menu Item</span>
+                      </span>
+                      <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg"><?php echo $row[3] ;?></a>
+                        <span style="left: 166px; right: 44px;" class="menu-line"></span>
+                        <span class="menu-price">Special Menu Item</span>
+                      </span>
+                       <div class="col-md-12  text-center gallery-trigger">
+                    <ul>
+                        
+                        <li><a class="filter" data-filter=".special-1"><?php echo $row[4] ;?></a></li>
+                        
+                    </ul>
+                </div>
+                    </div>
+                    <?php
+                     }
+                ?>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- contact -->
     <section id="contact" class="section-padding">
         <div class="container">
