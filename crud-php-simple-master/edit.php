@@ -12,7 +12,7 @@ if(isset($_POST['update']))
 
 		$result = pg_query($pg_conn,"UPDATE menu SET item_price=91
 		 WHERE item_id=$id");
-		echo $id;
+		
 		//redirectig to the display page. In our case, it is index.php
 		//header("Location: index.php");
 	}
