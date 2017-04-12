@@ -1,4 +1,9 @@
 <?php
+function pg_connection_string_from_database_url() {
+  extract(parse_url($_ENV["DATABASE_URL"])); 
+  return "user=$user password=$pass host=$host dbname=" . substr($path, 1); # <- you may want to add sslmode=require there too
+}
+$pg_conn = pg_connect(pg_connection_string_from_database_url());
 if(isset($_POST['update']))
 {	
 
@@ -8,16 +13,16 @@ if(isset($_POST['update']))
 	$price = $_POST['price'];	
 
 	
-		//$pg_conn = pg_connect(pg_connection_string_from_database_url());
+		
 
 		$result = pg_query($pg_conn,"UPDATE menu SET item_price=$price
 		 WHERE item_id=$id");
 		
 		//redirectig to the display page. In our case, it is index.php
-		//header("Location: index.php");
+		header("Location: index.php");
 	}
 	
-//header("Location: index.php");
+
 
 
 ?>
@@ -26,10 +31,6 @@ if(isset($_POST['update']))
 <?php
 //getting id from url
 $id = $_GET['id'];
-function pg_connection_string_from_database_url() {
-  extract(parse_url($_ENV["DATABASE_URL"])); 
-  return "user=$user password=$pass host=$host dbname=" . substr($path, 1); # <- you may want to add sslmode=require there too
-}
 
 # Here we establish the connection. Yes, that's all.
 $pg_conn = pg_connect(pg_connection_string_from_database_url());
