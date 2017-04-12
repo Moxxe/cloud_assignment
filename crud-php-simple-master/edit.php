@@ -7,7 +7,7 @@ function pg_connection_string_from_database_url() {
 if(isset($_POST['update']))
 {	
 
-	$item = $_POST['id'];
+	//$item = $_POST['id'];
 	$name = $_POST['name'];
 	$desc = $_POST['desc'];
 	$price = $_POST['price'];	
@@ -16,7 +16,7 @@ if(isset($_POST['update']))
 		
 
 		$result = pg_query($pg_conn,"UPDATE menu SET item_price='$price'
-		 WHERE item_id='7'");
+		 WHERE item_id=7");
 		
 		//redirectig to the display page. In our case, it is index.php
 		header("Location: index.php");
