@@ -6,7 +6,7 @@ function pg_connection_string_from_database_url() {
 if(isset($_POST['update']))
 {	
 
-	$id = $_POST['id']);
+	$id = $_POST['id'];
 	$price = $_POST['price'];	
 	
 	
