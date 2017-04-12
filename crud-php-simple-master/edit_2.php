@@ -30,10 +30,9 @@ $pg_conn = pg_connect(pg_connection_string_from_database_url());
 
 
 <?php
+
 //getting id from url
 $id = $_GET['id'];
-
-
 # Here we establish the connection. Yes, that's all.
 $pg_conn = pg_connect(pg_connection_string_from_database_url());
 //selecting data associated with this particular id
@@ -61,7 +60,7 @@ pg_free_result($result);
 	<a href="index.php">Home</a>
 	<br/><br/>
 	
-	<form name="form1" method="post" action="edit.php">
+	<form name="form1" method="post" action="edit_2.php">
 		<table border="0">
 			<tr> 
 				<td>ID</td>
