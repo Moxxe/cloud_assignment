@@ -2,11 +2,14 @@
 if(isset($_POST['update']))
 {	
 
-	//$id = $_POST['id']);
+	$id = $_POST['id']);
 	$price = $_POST['price'];	
-	//echo(name);
 	
-
+	
+function pg_connection_string_from_database_url() {
+  extract(parse_url($_ENV["DATABASE_URL"])); 
+  return "user=$user password=$pass host=$host dbname=" . substr($path, 1); # <- you may want to add sslmode=require there too
+}
 	
 $pg_conn = pg_connect(pg_connection_string_from_database_url());
 
@@ -27,10 +30,7 @@ $pg_conn = pg_connect(pg_connection_string_from_database_url());
 <?php
 //getting id from url
 $id = $_GET['id'];
-function pg_connection_string_from_database_url() {
-  extract(parse_url($_ENV["DATABASE_URL"])); 
-  return "user=$user password=$pass host=$host dbname=" . substr($path, 1); # <- you may want to add sslmode=require there too
-}
+
 
 # Here we establish the connection. Yes, that's all.
 $pg_conn = pg_connect(pg_connection_string_from_database_url());
@@ -47,6 +47,8 @@ while($row = pg_fetch_row($result))
 
 
 }
+pg_free_result($result);
+        pg_close($dbconn);
 ?>
 <html>
 <head>	
