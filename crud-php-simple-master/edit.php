@@ -14,9 +14,10 @@ if(isset($_POST['update']))
 
 	
 		
+		$pg_conn = pg_connect(pg_connection_string_from_database_url());
 
-		$result = pg_query($pg_conn,"UPDATE menu SET item_price=91
-		 WHERE item_id=7 ");
+		$result = pg_query($pg_conn,"UPDATE menu SET item_price='$price'
+		 WHERE item_id=$item ");
 		
 		//redirectig to the display page. In our case, it is index.php
 		header("Location: index.php");
@@ -44,6 +45,8 @@ while($row = pg_fetch_row($result))
 	$desc = $row[2];
 	$price = $row[3];
 }
+pg_free_result($result);
+        pg_close($dbconn);
 ?>
 <html>
 <head>	
