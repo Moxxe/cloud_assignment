@@ -18,7 +18,8 @@ if(isset($_POST['update']))
 
 		$result = pg_query($pg_conn,"UPDATE menu SET item_price='$price'
 		 WHERE item_id=$item ");
-		
+		pg_free_result($result);
+        pg_close($dbconn);
 		//redirectig to the display page. In our case, it is index.php
 		header("Location: index.php");
 	}
