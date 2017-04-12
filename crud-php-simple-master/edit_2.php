@@ -8,14 +8,14 @@ if(isset($_POST['update']))
 {	
 
 	$id = $_POST['id'];
-	$price = $_POST['price'];	
+	$price_special = $_POST['price'];	
 	
 	
 
 	
 $pg_conn = pg_connect(pg_connection_string_from_database_url());
 
-		$result = pg_query($pg_conn,"UPDATE special SET price='$price' 
+		$result = pg_query($pg_conn,"UPDATE special SET price='$price_special' 
 		 WHERE id=$id");
 		
 		//redirectig to the display page. In our case, it is index.php
